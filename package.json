@@ -1,0 +1,20 @@
+{
+  "name": "stocksense",
+  "version": "1.0.0",
+  "description": "StockSense - Modular Inventory Management System (IMS)",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=backend\"",
+    "start": "npm run start --workspace=backend",
+    "start:frontend": "npm run dev --workspace=frontend",
+    "start:backend": "npm run start --workspace=backend",
+    "install:all": "npm install && npm install --workspace=frontend && npm install --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
