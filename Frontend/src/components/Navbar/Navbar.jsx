@@ -101,7 +101,7 @@ const Navbar = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  backgroundColor: 'rgba(15, 23, 42, 0.5)'
+                  backgroundColor: 'var(--bg-card-hover)'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

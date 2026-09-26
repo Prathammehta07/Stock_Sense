@@ -149,7 +149,7 @@ const Dashboard = () => {
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
             <span style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)' }}>Total Products</span>
-            <div style={{ padding: '0.5rem', borderRadius: '10px', backgroundColor: 'rgba(99, 102, 241, 0.15)', color: 'var(--primary)' }}>
+            <div style={{ padding: '0.5rem', borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-glow)', color: 'var(--primary)' }}>
               <Package size={20} />
             </div>
           </div>
@@ -254,7 +254,7 @@ const Dashboard = () => {
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
             <span style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)' }}>Scheduled Transfers</span>
-            <div style={{ padding: '0.5rem', borderRadius: '10px', backgroundColor: 'rgba(59, 130, 246, 0.15)', color: 'var(--info)' }}>
+            <div style={{ padding: '0.5rem', borderRadius: 'var(--radius-sm)', backgroundColor: 'rgba(122, 140, 107, 0.15)', color: 'var(--info)' }}>
               <ArrowLeftRight size={20} />
             </div>
           </div>

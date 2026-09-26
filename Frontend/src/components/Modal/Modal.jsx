@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, title, children, maxWidth = '600px' }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(15, 23, 42, 0.75)',
+        backgroundColor: 'rgba(24, 36, 48, 0.38)',
         backdropFilter: 'blur(6px)',
         padding: '1.5rem',
         animation: 'fadeIn 0.2s ease-out'
@@ -51,7 +51,7 @@ const Modal = ({ isOpen, onClose, title, children, maxWidth = '600px' }) => {
             justifyContent: 'space-between',
             padding: '1.25rem 1.5rem',
             borderBottom: '1px solid var(--border-color)',
-            backgroundColor: 'rgba(15, 23, 42, 0.4)'
+            backgroundColor: 'var(--bg-card-hover)'
           }}
         >
           <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--text-main)' }}>

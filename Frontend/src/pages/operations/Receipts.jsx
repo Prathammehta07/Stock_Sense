@@ -239,7 +239,7 @@ const Receipts = () => {
             </h4>
             <div style={{ border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: '1.25rem' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
-                <thead style={{ backgroundColor: 'rgba(15,23,42,0.6)' }}>
+                <thead style={{ backgroundColor: 'var(--bg-card-hover)' }}>
                   <tr>
                     <th style={{ padding: '0.625rem 1rem', textAlign: 'left' }}>Product</th>
                     <th style={{ padding: '0.625rem 1rem', textAlign: 'right' }}>Demanded</th>

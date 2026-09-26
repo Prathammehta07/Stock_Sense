@@ -17,7 +17,8 @@ const Button = ({
     justifyContent: 'center',
     gap: '0.5rem',
     fontWeight: '600',
-    borderRadius: '8px',
+    borderRadius: 'var(--radius-sm)',
+    letterSpacing: '0.01em',
     transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
     cursor: disabled ? 'not-allowed' : 'pointer',
     opacity: disabled ? 0.6 : 1,
@@ -35,7 +36,7 @@ const Button = ({
     primary: {
       backgroundColor: 'var(--primary)',
       color: '#ffffff',
-      boxShadow: '0 2px 4px rgba(99, 102, 241, 0.3)'
+      boxShadow: 'var(--shadow-sm)'
     },
     secondary: {
       backgroundColor: 'var(--bg-card-hover)',
@@ -45,12 +46,12 @@ const Button = ({
     success: {
       backgroundColor: 'var(--success)',
       color: '#ffffff',
-      boxShadow: '0 2px 4px rgba(16, 185, 129, 0.3)'
+      boxShadow: 'var(--shadow-sm)'
     },
     danger: {
       backgroundColor: 'var(--danger)',
       color: '#ffffff',
-      boxShadow: '0 2px 4px rgba(239, 68, 68, 0.3)'
+      boxShadow: 'var(--shadow-sm)'
     },
     outline: {
       backgroundColor: 'transparent',

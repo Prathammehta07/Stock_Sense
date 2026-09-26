@@ -70,22 +70,22 @@ const Sidebar = () => {
             style={{
               width: '38px',
               height: '38px',
-              borderRadius: '10px',
-              background: 'linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%)',
+              borderRadius: 'var(--radius-sm)',
+              border: '1px solid var(--primary)',
+              background: 'transparent',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 0 15px rgba(99, 102, 241, 0.4)'
+              justifyContent: 'center'
             }}
           >
-            <Package color="#fff" size={22} />
+            <Package color="var(--primary)" size={20} />
           </div>
           <div>
-            <div style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.02em', color: '#fff' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.375rem', fontWeight: 700, letterSpacing: '0.01em', color: 'var(--text-main)', textTransform: 'uppercase' }}>
               Stock<span style={{ color: 'var(--primary)' }}>Sense</span>
             </div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-subtle)', fontWeight: 600, textTransform: 'uppercase' }}>
-              Inventory OS v1.0
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--text-subtle)', fontWeight: 500 }}>
+              INVENTORY-OS v1.0
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ const Sidebar = () => {
                 borderRadius: 'var(--radius-sm)',
                 fontSize: '0.875rem',
                 fontWeight: isOpsActive ? 700 : 500,
-                color: isOpsActive ? '#ffffff' : 'var(--text-muted)',
+                color: isOpsActive ? 'var(--primary)' : 'var(--text-muted)',
                 backgroundColor: 'transparent',
                 transition: 'var(--transition)'
               }}

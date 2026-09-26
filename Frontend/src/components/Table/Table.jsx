@@ -33,7 +33,7 @@ const Table = ({
           <thead>
             <tr
               style={{
-                backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                backgroundColor: 'var(--bg-card-hover)',
                 borderBottom: '1px solid var(--border-color)'
               }}
             >
@@ -89,7 +89,7 @@ const Table = ({
                     borderBottom: '1px solid var(--border-color)',
                     transition: 'var(--transition)'
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(51, 65, 85, 0.4)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--bg-card-hover)')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                 >
                   {columns.map((col, colIdx) => (
@@ -119,7 +119,7 @@ const Table = ({
             justifyContent: 'space-between',
             padding: '0.875rem 1.25rem',
             borderTop: '1px solid var(--border-color)',
-            backgroundColor: 'rgba(15, 23, 42, 0.3)'
+            backgroundColor: 'var(--bg-card-hover)'
           }}
         >
           <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>

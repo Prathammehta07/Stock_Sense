@@ -1,9 +1,9 @@
 export const STATUS_COLORS = {
-  Draft: { bg: '#fef3c7', color: '#92400e', border: '#fde68a' },
-  Waiting: { bg: '#ffedd5', color: '#9a3412', border: '#fed7aa' },
-  Ready: { bg: '#dbeafe', color: '#1e40af', border: '#bfdbfe' },
-  Done: { bg: '#d1fae5', color: '#065f46', border: '#a7f3d0' },
-  Canceled: { bg: '#fee2e2', color: '#991b1b', border: '#fca5a5' }
+  Draft: { bg: 'rgba(167, 156, 144, 0.12)', color: '#a79c90', border: 'rgba(167, 156, 144, 0.4)' },
+  Waiting: { bg: 'rgba(232, 163, 61, 0.14)', color: '#e8a33d', border: 'rgba(232, 163, 61, 0.4)' },
+  Ready: { bg: 'rgba(122, 140, 107, 0.14)', color: '#9fb08f', border: 'rgba(122, 140, 107, 0.4)' },
+  Done: { bg: 'rgba(76, 154, 106, 0.16)', color: '#4c9a6a', border: 'rgba(76, 154, 106, 0.45)' },
+  Canceled: { bg: 'rgba(193, 68, 43, 0.16)', color: '#c1442b', border: 'rgba(193, 68, 43, 0.45)' }
 };
 
 export const DOCUMENT_TYPES = [
