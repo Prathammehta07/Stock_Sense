@@ -1,102 +1,42 @@
-# StockSense - Modular Inventory Management System (IMS)
+# StockSense Database Documentation
 
-StockSense is an enterprise-grade, modular Inventory Management System designed to digitize and streamline stock-related operations across warehouses and locations. It replaces manual registers, Excel spreadsheets, and fragmented tracking systems with a centralized, real-time, easy-to-use platform.
-
----
-
-## 🌟 Key Features
-
-1. **Dashboard & Real-time KPIs**
-   - Live counters for Total Stock, Low Stock alerts, Pending Receipts, Pending Deliveries, and Scheduled Internal Transfers.
-   - Dynamic filters by document type, status, warehouse/location, and product category.
-
-2. **Product Management**
-   - Comprehensive product catalog with SKU, Category, Unit of Measure (UoM), initial stock, and reordering rules.
-   - Stock availability breakdown by warehouse location (Main Store, Production Floor, Rack A/B, etc.).
-
-3. **Operations Management**
-   - **Receipts (Incoming Goods):** Process vendor receipts, add line items, input quantities, and validate to automatically increase stock.
-   - **Delivery Orders (Outgoing Goods):** Manage customer shipments through Pick -> Pack -> Validate stages to decrease stock.
-   - **Internal Transfers:** Relocate stock between internal locations (e.g., Main Store → Production Rack, Rack A → Rack B) with automated ledger updates.
-   - **Inventory Adjustments:** Reconcile physical inventory counts against system records with instant automatic variance adjustments.
-
-4. **Move History & Stock Ledger**
-   - Immutable double-entry inventory ledger logging every item movement, timestamp, user, reference document, and source/destination locations.
-
-5. **Multi-Warehouse & Multi-Location Support**
-   - Configure multiple warehouses, zones, racks, and shelving bins.
-
-6. **Low Stock Alerts & Smart Filters**
-   - Automatic triggers for items below reordering rules.
+This folder contains the complete SQL database schema (`schema.sql`) and sample seed data (`seed.sql`) for StockSense.
 
 ---
 
-## 📁 Repository Folder Structure
+## 🗄️ Database Architecture
 
-```
-stocksense/
-├── frontend/             # React SPA (Vite + Modern CSS + React Router + Context API)
-│   ├── public/           # Static assets & logos
-│   └── src/              # Components, Layouts, Pages, Context, Services, Routes, Utils
-├── backend/              # Node.js + Express REST API Backend
-│   └── src/              # Controllers, Models, Routes, Middleware, Services, Utils
-├── database/             # SQL Schemas and realistic Seed Data
-│   ├── schema.sql
-│   ├── seed.sql
-│   └── README.md
-├── docs/                 # Documentation (Requirements, API Docs, DB Design)
-├── .gitignore
-├── README.md
-└── package.json
-```
+StockSense utilizes a relational model designed around double-entry inventory principles:
+
+1. **`users`**: System users, authentication credentials, and access roles (`Admin`, `Inventory Manager`, `Warehouse Staff`).
+2. **`categories`**: Classification for inventory items (e.g. Raw Materials, Electronics, Finished Goods).
+3. **`warehouses` & `locations`**: Two-tiered location model supporting warehouses and physical sub-locations (Racks, Bins, Docks, Vendor bays).
+4. **`products`**: Item details including SKU, UoM, reordering min/max levels, unit cost, and selling price.
+5. **`stock`**: Real-time snapshot of product quantities at specific physical locations.
+6. **`receipts` & `receipt_items`**: Incoming goods workflows from vendors.
+7. **`deliveries` & `delivery_items`**: Outgoing customer shipping operations.
+8. **`transfers` & `transfer_items`**: Relocation of stock across internal locations.
+9. **`adjustments`**: Reconciliation records between recorded stock and physical counts.
+10. **`stock_ledger`**: Immutable audit trail logging every stock increment/decrement.
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ How to Import into PostgreSQL / MySQL / SQLite
 
-### Prerequisites
-- Node.js (v18+ recommended)
-- npm or pnpm
-
-### Installation
-
+### SQLite:
 ```bash
-# Clone the repository and navigate to root folder
-cd stocksense
-
-# Install all dependencies for root, frontend, and backend
-npm run install:all
+sqlite3 stocksense.db < schema.sql
+sqlite3 stocksense.db < seed.sql
 ```
 
-### Running Locally
-
+### PostgreSQL:
 ```bash
-# Run both Frontend and Backend concurrently
-npm run dev
-
-# Or run frontend individually
-npm run start:frontend
-
-# Or run backend individually
-npm run start:backend
+psql -U postgres -d stocksense -f schema.sql
+psql -U postgres -d stocksense -f seed.sql
 ```
 
----
-
-## 📡 API Endpoints Summary
-
-- `POST /api/auth/login` - User login
-- `POST /api/auth/signup` - User registration
-- `POST /api/auth/forgot-password` - Trigger OTP for password reset
-- `GET /api/dashboard/stats` - Fetch dashboard KPIs and dynamic filter summary
-- `GET /api/products` - List all products with stock availability per location
-- `POST /api/receipts` - Create & validate incoming vendor receipts
-- `POST /api/deliveries` - Process outgoing delivery orders
-- `POST /api/transfers` - Execute internal warehouse transfers
-- `POST /api/adjustments` - Perform physical inventory stock count adjustments
-- `GET /api/move-history` - Query full Stock Ledger move history
-
----
-
-## 📄 License
-MIT License. Built for enterprise inventory management.
+### MySQL:
+```bash
+mysql -u root -p stocksense < schema.sql
+mysql -u root -p stocksense < seed.sql
+```
